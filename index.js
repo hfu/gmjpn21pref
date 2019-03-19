@@ -12,11 +12,16 @@ const tile = new VectorTile(new Protobuf(zlib.gunzipSync(
 )))
 
 const layer = tile.layers.gmjpn21pref
+let geojson = {
+  type: 'FeatureCollection',
+  features: []
+}
 for (let i = 0; i < layer.length; i++) {
   let f = layer.feature(i).toGeoJSON(2, 3, 2)
   f.properties = {
     code: parseInt(f.properties.adm_code.substring(0, 2)),
     name: f.properties.nam
   }
-  console.log(JSON.stringify(f))
+  geojson.features.push(f)
 }
+console.log(JSON.stringify(geojson, null, 0))
