@@ -17,7 +17,7 @@ let geojson = {
   features: []
 }
 for (let i = 0; i < layer.length; i++) {
-  let f = layer.feature(i).toGeoJSON(2, 3, 1)
+  let f = layer.feature(i).toGeoJSON(3, 1, 2)
   f.properties = {
     code: parseInt(f.properties.adm_code.substring(0, 2)),
     name: f.properties.nam
