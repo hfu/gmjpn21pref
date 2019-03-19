@@ -8,7 +8,7 @@ path{ fill:transparent; stroke:rgba(0,0,0,1); }
 <body>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-<script src="https://hfu.github.io/gmjpn21pref/geo2rect.js"></script>
+<script src="http://prjcts.sebastianmeier.eu/geo2rect/build/geo2rect.js"></script>
 <script>
 var config = {
   width : 700, height : 700, padding : 70, projection : d3.geoMercator(), duration : 1000,
@@ -29,10 +29,41 @@ var config = {
     13:{x:2,y:4},
     14:{x:0,y:5},
     15:{x:1,y:5},
-    16:{x:2,y:5}
+    16:{x:2,y:5},
+    17:{x:1,y:0},
+    18:{x:0,y:1},
+    19:{x:1,y:1},
+    20:{x:2,y:1},
+    21:{x:0,y:2},
+    22:{x:1,y:2},
+    23:{x:2,y:2},
+    24:{x:0,y:3},
+    25:{x:1,y:3},
+    26:{x:2,y:3},
+    27:{x:0,y:4},
+    28:{x:1,y:4},
+    29:{x:2,y:4},
+    30:{x:0,y:5},
+    31:{x:1,y:5},
+    32:{x:1,y:0},
+    33:{x:0,y:1},
+    34:{x:1,y:1},
+    35:{x:2,y:1},
+    36:{x:0,y:2},
+    37:{x:1,y:2},
+    38:{x:2,y:2},
+    39:{x:0,y:3},
+    40:{x:1,y:3},
+    41:{x:2,y:3},
+    42:{x:0,y:4},
+    43:{x:1,y:4},
+    44:{x:2,y:4},
+    45:{x:0,y:5},
+    46:{x:1,y:5},
+    47:{x:1,y:5}
   }
 }
-var svg = d3.select('body').append('svg').attr('width',config.width).attr('height',config.height)
+var svg = d3.select('body').append('svg').attr('width', config.width).attr('height',config.height)
 var g2r = new geo2rect.draw()
 d3.json('https://hfu.github.io/gmjpn21pref/pref.geojson', function (err, data) {
   console.log(data)
